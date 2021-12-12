@@ -1,6 +1,11 @@
-<?php 
+<?php
 session_start();
-$_SESSION = [];
-session_unset();
-session_destroy();
-header("Location: index.php");
+if (isset($_SESSION["login"])) {
+    $_SESSION = [];
+    session_unset();
+    session_destroy();
+    header("Location: index.php");
+}
+else {
+    header("Location: index.php");
+}
