@@ -7,7 +7,7 @@ if (isset($_POST["regist"])) {
         alert('Registration Successful !')
         </script>";
         $_SESSION["login"] = true;
-        $_SESSION["user"] = $username;
+        $_SESSION["user"] = $_POST["username"];
         header("Location: index.php");
     } else {
         echo mysqli_error($conn);
@@ -29,6 +29,10 @@ if (isset($_POST["regist"])) {
         }
     </style>
 </head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <body>
     <?php require "header.php"; ?>
