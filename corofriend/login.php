@@ -1,22 +1,33 @@
 <?php
 session_start();
 require "functions.php";
-if (isset($_POST["login"])) {
-    $username = $_POST["username"];
-    $password = $_POST["password"];
+if (!isset($_SESSION["login"])) {
+    if (isset($_POST["login"])) {
+        $username = $_POST["username"];
+        $password = $_POST["password"];
 
-    $valid = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
+        $valid = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
 
-    if (mysqli_num_rows($valid) === 1) {
-        $row = mysqli_fetch_assoc($valid);
-        if (password_verify($password, $row["password"])) {
-            header("Location: index.php");
-            $_SESSION["login"] = true;
-            exit;
+        if (mysqli_num_rows($valid) === 1) {
+            $row = mysqli_fetch_assoc($valid);
+            if (password_verify($password, $row["password"])) {
+                $_SESSION["login"] = true;
+                $_SESSION["user"] = $username;
+                if (isset($_SESSION["page"])) {
+                    header("Location: ".$_SESSION["page"]);
+                }
+                else {
+                    header("Location: index.php");
+                }
+                exit;
+            }
         }
+        $not_valid = true;
     }
-    $not_valid = true;
+} else {
+    header("Location: index.php");
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -67,6 +78,7 @@ if (isset($_POST["login"])) {
             </div>
             <button type="submit" name="login" class="btn btn-success" id="done">Submit</button>
             <small id="registerInfo" class="form-text text-muted">Doesn't have an account yet ? <a href="registration.php"> Register here !</a></small>
+            <!-- <small id="registerInfo" class="form-text text-muted">Want to change password ? <a href="changepassword.php"> Change it here !</a></small> -->
         </form>
     </div>
 </body>
