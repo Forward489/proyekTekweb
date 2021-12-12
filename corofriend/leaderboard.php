@@ -2,6 +2,7 @@
 session_start();
 
 if (!isset($_SESSION["login"])) {
+    $_SESSION["page"] = "leaderboard.php";
     header("Location: login.php");
 }
 
@@ -20,8 +21,8 @@ if (!isset($_SESSION["login"])) {
     }
 </style> 
 <body>
-    <?php require "header.php"?>
+    <?php require "header.php";?>
     <h1>LEADERBOARD PAGE</h1>
-    <?php require "footer.php"?>
+    <?php require "footer.php";?>
 </body>
 </html>
