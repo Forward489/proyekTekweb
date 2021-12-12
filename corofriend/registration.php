@@ -1,10 +1,14 @@
 <?php
+session_start();
 require "functions.php";
 if (isset($_POST["regist"])) {
     if (registration($_POST) > 0) {
         echo "<script>
         alert('Registration Successful !')
         </script>";
+        $_SESSION["login"] = true;
+        $_SESSION["user"] = $username;
+        header("Location: index.php");
     } else {
         echo mysqli_error($conn);
     }
