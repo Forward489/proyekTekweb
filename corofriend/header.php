@@ -63,6 +63,9 @@
                     <li class="nav-item"><a class="nav-link" href="leaderboard.php">Leaderboard</a></li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
+                    <?php if (isset($_SESSION["login"])) : ?>
+                        <li class="nav-item"><a class="nav-link" href="index.php">Hello, <?= $_SESSION["user"]; ?></a></li>
+                    <?php endif; ?>
                     <?php
                         if(isset($_SESSION["login"])){ 
                         echo '<li class="nav-item"><a class="nav-link" href="logout.php" onclick="return confirm(\'Are you sure you want to log out ?\');">Log Out</a></li>';
