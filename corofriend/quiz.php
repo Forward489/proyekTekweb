@@ -2,6 +2,7 @@
 session_start();
 
 if (!isset($_SESSION["login"])) {
+    $_SESSION["page"] = "quiz.php";
     header("Location: login.php");
 }
 
