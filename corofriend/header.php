@@ -66,6 +66,7 @@
                     <?php if (isset($_SESSION["login"])) : ?>
                         <li class="nav-item"><a class="nav-link" href="index.php">Hello, <?= $_SESSION["user"]; ?></a></li>
                         <li class="nav-item"><a class="nav-link" href="logout.php" onclick="return confirm('Are you sure you want to log out ?');">Log Out</a></li>
+                        <li class="nav-item"><a class="nav-link" href="changePassword.php?username=<?= $_SESSION["user"]; ?>">Change Password</a></li>
                     <?php else : ?>
                         <li class="nav-item"><a class="nav-link" href="login.php">Log In</a></li>
                         <li class="nav-item"><a class="nav-link" href="registration.php">Register</a></li>
