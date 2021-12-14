@@ -8,10 +8,13 @@ $change_password = query("SELECT * FROM user WHERE username = '$username'");
 
 if (isset($_POST["submit"])) {
     if (changePass($_POST) > 0) {
-        echo"<script>alert('Password and or username changed succesfully');</script>";
-        header("Location: index.php");
+        echo "<script>
+        alert('Password and or username changed succesfully !');
+        document.location.href = 'index.php';
+        </script>";
     } else {
-        echo"<script>alert('Failed to change password and or username');</script>";
+        echo "<script>alert('Failed to change password and or username');
+        document.location.href = 'changePassword.php';</script>";
     }
 }
 
