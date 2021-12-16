@@ -232,7 +232,7 @@ $(document).on("scroll", function() {
                                 <a class="btn btn-custom btn-lg" href="quiz/index.php" role="button" style="font-family: \'Hammersmith One\', sans-serif;">Go to Quiz</a>
                             </div>
                             <figure class="col-xs-8 col-md-6 inline-block">
-                                <a href="quiz/index.php" data-size="1600x1067">
+                                <a href="quiz/index.php">
                                     <img class="img-fluid" src="pics/jumbotron-pic2.png" style="opacity:0.7; border: 5px solid #555;">
                                 </a>
                             </figure>
