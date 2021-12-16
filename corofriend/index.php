@@ -198,8 +198,8 @@ $(document).on("scroll", function() {
 <body>
     <div id="carouselJumbotron" class="carousel slide carousel-fade" data-ride="carousel" data-touch="true">
         <ol class="carousel-indicators">
-            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+            <li data-target="#carouselJumbotron" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselJumbotron" data-slide-to="1"></li>
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
