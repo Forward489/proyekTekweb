@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,17 +14,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
     <style>
         .nav-item > a{
+            font-family: 'Hammersmith One', sans-serif;
             color:#ECB365!important;
         }
         .navbar-brand{
+            font-family: 'Hammersmith One', sans-serif;
+            font-weight: bold;
             color:#ECB365!important;
         }
         .custom-toggler .navbar-toggler-icon {
             background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(236,179,101, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
         }
-        .custom-toggler.navbar-toggler {
+        .custom-toggler {
             border-color: #ECB365!important;
         } 
+        .custom-toggler:hover {
+            background-color: #ECB365;
+        } 
+        .custom-toggler:hover .navbar-toggler-icon{
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(4,28,50, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+        }
         .nav-item > a:hover {
             color: #041C32!important;
             background-color: #ECB365;
@@ -43,7 +51,8 @@
         $(function () {
         $(document).scroll(function () {
             var $nav = $(".sticky-top");
-            $nav.toggleClass('scrolled', $(this).scrollTop() > 500);
+            var $nav2 = $(".carousel-item");
+            $nav.toggleClass('scrolled', $(this).scrollTop() > $nav2.height()-$nav.height());
         });
         });
 </script>
@@ -59,18 +68,18 @@
             <div class="collapse navbar-collapse" id="myNavigation">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="quiz.php">Quiz</a></li>
-                    <li class="nav-item"><a class="nav-link" href="leaderboard.php">Leaderboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="quiz/index.php">Quiz</a></li>
+                    <li class="nav-item"><a class="nav-link" href="quiz/highscores.php">Leaderboard</a></li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <?php if (isset($_SESSION["login"])) : ?>
-                        <li class="nav-item"><a class="nav-link" href="index.php">Hello, <?= $_SESSION["user"]; ?></a></li>
-                        <li class="nav-item"><a class="nav-link" href="logout.php" onclick="return confirm('Are you sure you want to log out ?');">Log Out</a></li>
-                        <li class="nav-item"><a class="nav-link" href="changePassword.php?username=<?= $_SESSION["user"]; ?>">Change Password</a></li>
+                        <li class="nav-item"><a class="nav-link">Hi, <?= $_SESSION["user"]; ?>!</a></li>
+                    <li class="nav-item"><a class="nav-link" href="logout.php" onclick="return confirm('Are you sure you want to log out ?');">Log Out</a></li>
+                    <li class="nav-item"><a class="nav-link" href="changePassword.php?username=<?= $_SESSION["user"]; ?>">Change Password</a></li>
                     <?php else : ?>
                         <li class="nav-item"><a class="nav-link" href="login.php">Log In</a></li>
                         <li class="nav-item"><a class="nav-link" href="registration.php">Register</a></li>
-                    <?php endif;?>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>

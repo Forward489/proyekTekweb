@@ -39,6 +39,7 @@ if (!isset($_SESSION["login"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 </head>
+<?php require "header.php"; ?>
 <style>
     .loginError {
         color: red;
@@ -53,10 +54,17 @@ if (!isset($_SESSION["login"])) {
     #done {
         margin-left: 45%;
     }
+    body{
+        font-family: 'Hammersmith One', sans-serif;
+        background-color:#041C32;
+        -webkit-font-smoothing: antialiased;
+    }
+    .font-color {
+        color: #ECB365;
+    }
 </style>
 
 <body>
-    <?php require "header.php"; ?>
     <div class="container">
         <?php
         if (isset($not_valid)) :
@@ -65,16 +73,15 @@ if (!isset($_SESSION["login"])) {
         <?php endif; ?>
         <form action="" method="post">
             <div class="form-group">
-                <label for="username">Username</label>
+                <label class="font-color" for="username">Username</label>
                 <input type="text" name="username" id="username" class="form-control" placeholder="Enter username">
             </div>
             <div class="form-group">
-                <label for="password">Password</label>
+                <label class="font-color" for="password">Password</label>
                 <input type="password" name="password" id="password" class="form-control" placeholder="Password">
             </div>
             <button type="submit" name="login" class="btn btn-success" id="done">Submit</button>
             <small id="registerInfo" class="form-text text-muted">Doesn't have an account yet ? <a href="registration.php"> Register here !</a></small>
-            <!-- <small id="registerInfo" class="form-text text-muted">Want to change password ? <a href="changepassword.php"> Change it here !</a></small> -->
         </form>
     </div>
 </body>

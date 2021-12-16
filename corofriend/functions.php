@@ -58,7 +58,6 @@ function changePass($value)
     $old_password = mysqli_fetch_assoc($old_password);
     $check2 = mysqli_fetch_assoc($check2);
 
-    
     if (mysqli_fetch_assoc($check)) {
         if (!$check2["username"] == $old_username) {
             echo "<script>
@@ -83,11 +82,11 @@ function changePass($value)
     }
 
     $password_new = password_hash($password_new, PASSWORD_DEFAULT);
-    
+
     mysqli_query($conn, "UPDATE user SET username = '$username', password = '$password_new' WHERE username='$old_username'");
 
     $_SESSION["user"] = $username;
-
+    
     return mysqli_affected_rows($conn);
 }
 
