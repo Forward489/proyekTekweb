@@ -1,0 +1,50 @@
+[
+    {
+        "question": "Apa itu plasma darah?",
+        "choice1": "Sel darah biasa",
+        "choice2": "darah yang berwarna kuning",
+        "choice3": "Cairan berwarna kekuningan yang bertugas membawa sel darah. Plasma darah membawa berbagai nutrisi penting yang menunjang kesehatan tubuh.",
+        "choice4": "Hmmm",
+        "answer": 3
+    },
+    {
+        "question": "Apa itu plasma konvalesen?",
+        "choice1": "Plasma TV",
+        "choice2": "Sel darah yang diperbaharui",
+        "choice3": "Kon apa? Konvaselen?",
+        "choice4": "Plasma darah dari orang yang telah sembuh dari covid atau penyintas covid",
+        "answer": 4
+    },
+    {
+        "question": "Berapakah range umur minimal pendonor plasma darah konvalesen?",
+        "choice1": "18 Tahun",
+        "choice2": "16 Tahun, 21 Tahun",
+        "choice3": "12 Tahun mungkin?",
+        "choice4": "30 Tahun",
+        "answer": 1
+    },
+    {
+        "question": "Syarat menjadi penerima donor plasma, KECUALI",
+        "choice1": "Penderita COVID, tapi nggak semua.",
+        "choice2": "Hanya yang gejalanya sedang, berat dan kritis saja",
+        "choice3": "18+",
+        "choice4": "Semua yang kena COVID!",
+        "answer": 4
+    },
+    {
+        "question": "Ciri - ciri penderita Covid 19 sedang, berat, kritis?",
+        "choice1": "Makan banyak",
+        "choice2": "Harus menggunakan alat bantu pernapasan",
+        "choice3": "Cantengan",
+        "choice4": "Cepat haus",
+        "answer": 2
+    },
+    {
+        "question": "Apakah semua penerima donor plasma akan sembuh dari covid?",
+        "choice1": "Ya Pasti",
+        "choice2": "Harusnya iya",
+        "choice3": "Ya Nda Tau Kok Tanya Saya (YNTKTS)",
+        "choice4": "Tidak, karena terapi plasma konvalesen hanya membantu antibodi, bukan menyembuhkan.",
+        "answer": 4
+    }
+]
